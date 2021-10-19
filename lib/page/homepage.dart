@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
     return Consumer<CounterLo>(builder: (context, data, child) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text("ah"),
+          title: const Text("Provider"),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
