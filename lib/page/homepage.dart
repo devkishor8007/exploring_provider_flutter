@@ -7,45 +7,33 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<CounterLo>(builder: (context, data, child) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text("Provider"),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: Text(
-                "Value " + data.count.toString(),
-              ),
+    final data = Provider.of<SliderLo>(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(data.name),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Text("Value " + data.value.round().toString()),
+          ),
+          Text(
+            "We learn from failure, not from success!",
+            style: TextStyle(
+              fontSize: data.value,
             ),
-            const Text(
-              "We learn from failure, not from success!",
-            ),
-          ],
-        ),
-        floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            FloatingActionButton(
-              onPressed: () {
-                data.incre();
-              },
-              child: const Icon(Icons.add),
-            ),
-            const SizedBox(
-              width: 15,
-            ),
-            FloatingActionButton(
-              onPressed: () {
-                data.decr();
-              },
-              child: const Icon(Icons.remove),
-            ),
-          ],
-        ),
-      );
-    });
+          ),
+          Slider(
+            min: 15,
+            max: 50,
+            value: data.value,
+            onChanged: (val) {
+              data.sliderva(val);
+            },
+          ),
+        ],
+      ),
+    );
   }
 }

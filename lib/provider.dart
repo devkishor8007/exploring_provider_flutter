@@ -1,17 +1,14 @@
 import 'package:flutter/cupertino.dart';
 
-class CounterLo extends ChangeNotifier {
-  int _count = 0;
+class SliderLo extends ChangeNotifier {
+  final String _name = "Provider";
+  String get name => _name;
+  double _value = 15;
 
-  int get count => _count;
+  double get value => _value;
 
-  void incre() {
-    _count++;
-    notifyListeners();
-  }
-
-  void decr() {
-    _count--;
+  void sliderva(vals) {
+    _value = vals;
     notifyListeners();
   }
 }
