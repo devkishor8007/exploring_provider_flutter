@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (BuildContext context) => CounterLo(),
+    create: (BuildContext context) => CartPro(),
     child: const MyApp(),
   ));
 }
