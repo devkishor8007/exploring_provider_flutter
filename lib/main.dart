@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (BuildContext context) => SliderLo(),
+    create: (BuildContext context) => TextFieldProvider(),
     child: const MyApp(),
   ));
 }
@@ -21,6 +21,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const HomePage());
+        home: HomePage());
   }
 }
