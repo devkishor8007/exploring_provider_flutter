@@ -1,11 +1,11 @@
 import 'package:exploring_provider_flutter/page/homepage.dart';
-import 'package:exploring_provider_flutter/provider.dart';
+import 'package:exploring_provider_flutter/providers/setting_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (BuildContext context) => TextFieldProvider(),
+    create: (BuildContext context) => SettingProvider(),
     child: const MyApp(),
   ));
 }
@@ -21,6 +21,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomePage());
+        home: const HomePage());
   }
 }
