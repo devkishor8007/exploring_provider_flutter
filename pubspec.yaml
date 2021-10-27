@@ -27,11 +27,15 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  build_runner:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
   provider: ^6.0.1
-  shared_preferences: ^2.0.8
+  freezed:
+  freezed_annotation:
+  http: ^0.13.3
+  json_serializable:
 
 dev_dependencies:
   flutter_lints: ^1.0.0

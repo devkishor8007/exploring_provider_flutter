@@ -1,13 +1,12 @@
 import 'package:exploring_provider_flutter/page/homepage.dart';
-import 'package:exploring_provider_flutter/providers/setting_provider.dart';
+import 'package:exploring_provider_flutter/providers/api_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (BuildContext context) => SettingProvider(),
-    child: const MyApp(),
-  ));
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,12 +14,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const HomePage());
+    return ChangeNotifierProvider(
+      create: (BuildContext context) => MakeApiProviders(),
+      child: const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Provider',
+          home: HomePage()),
+    );
   }
 }
